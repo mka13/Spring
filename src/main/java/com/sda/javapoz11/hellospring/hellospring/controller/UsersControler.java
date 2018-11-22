@@ -17,20 +17,20 @@ public class UsersControler {
     private UsersService usersService;
 
 
-
-    @GetMapping(value = "/users" )
-    public List<User> users( String lastName){
+    @GetMapping(value = "/users")
+    public List<User> users(String lastName) {
         return usersService.findAll();
 
     }
-@GetMapping(value = "/users" , params = "lastName")
-public List<User>usersByLastName(@RequestParam ("lastName") String lastName){
-        return usersService.findByLastName(lastName);
-}
 
-@GetMapping("/users/{id}")
-    public User findById(@PathVariable ("id") Integer id){
+    @GetMapping(value = "/users", params = "lastName")
+    public List<User> usersByLastName(@RequestParam("lastName") String lastName) {
+        return usersService.findByLastName(lastName);
+    }
+
+    @GetMapping("/users/{id}")
+    public User findById(@PathVariable("id") Integer id) {
         return usersService.findById(id);
-}
+    }
 
 }

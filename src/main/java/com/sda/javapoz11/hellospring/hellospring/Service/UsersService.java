@@ -12,6 +12,12 @@ import java.util.List;
 public class UsersService {
    @Autowired
     private UsersRepository usersRepository;
+
+   public UserService (UsersRepository usersRepository){
+       this.usersRepository=usersRepository;
+   }
+
+
     public User findById(long id){
         return usersRepository.findById(id)
                 .orElse(null);
@@ -35,5 +41,7 @@ private void init (){
 public List<User> findByLastName(String lastName){
         return usersRepository.findByLastName(lastName);
 }
+
+
 
 }
