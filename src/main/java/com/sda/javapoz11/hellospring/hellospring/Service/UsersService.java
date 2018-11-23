@@ -13,7 +13,7 @@ public class UsersService {
    @Autowired
     private UsersRepository usersRepository;
 
-   public UserService (UsersRepository usersRepository){
+   public UsersService (UsersRepository usersRepository){
        this.usersRepository=usersRepository;
    }
 
